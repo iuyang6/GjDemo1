@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GjDemo</string>
+    <string name="menu1">管理</string>
+    <string name="Menu2">GIS</string>
+    <string name="menu3">农技信息</string>
+    <string name="menu4">农业执法</string>
+    <string name="menu5">我的</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/firstFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_looks_one_24"
+        android:title="@string/menu1"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/secondFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_looks_two_24"
+        android:title="@string/Menu2"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/thirdFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_looks_3_24"
+        android:title="@string/menu3"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/fourthFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_looks_4_24"
+        android:title="@string/menu4"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/fifthFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_looks_5_24"
+        android:title="@string/menu5"
+        app:showAsAction="ifRoom"/>
+</menu>
