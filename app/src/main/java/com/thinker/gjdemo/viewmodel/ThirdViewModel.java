@@ -1,4 +1,4 @@
-package com.thinker.gjdemo;
+package com.thinker.gjdemo.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 

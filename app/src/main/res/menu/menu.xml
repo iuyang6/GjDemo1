@@ -5,31 +5,31 @@
     <item
         android:id="@+id/firstFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_looks_one_24"
+        android:icon="@drawable/guanli"
         android:title="@string/menu1"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/secondFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_looks_two_24"
+        android:icon="@drawable/gis"
         android:title="@string/Menu2"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/thirdFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_looks_3_24"
+        android:icon="@drawable/nongjixinxi"
         android:title="@string/menu3"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/fourthFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_looks_4_24"
+        android:icon="@drawable/nongyezhifa"
         android:title="@string/menu4"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/fifthFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_looks_5_24"
+        android:icon="@drawable/wode"
         android:title="@string/menu5"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 </menu>

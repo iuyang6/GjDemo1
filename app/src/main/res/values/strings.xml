@@ -5,4 +5,11 @@
     <string name="menu3">农技信息</string>
     <string name="menu4">农业执法</string>
     <string name="menu5">我的</string>
+    <string name="z_detail">描述：</string>
+    <string name="z_user">执法人：</string>
+    <string name="z_time">创建时间：</string>
+    <string name="click_detail">查看详情</string>
+    <string name="daohang1">柑橘生产管理信息系统</string>
+    <string name="gisxx">GIS信息</string>
+    <string name="gly">管理员</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.thinker.gjdemo;
+package com.thinker.gjdemo.fragment;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -12,24 +12,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FourthFragment extends Fragment {
+import com.thinker.gjdemo.viewmodel.FifthViewModel;
+import com.thinker.gjdemo.R;
 
-    private FourthViewModel mViewModel;
+public class FifthFragment extends Fragment {
 
-    public static FourthFragment newInstance() {
-        return new FourthFragment();
+    private FifthViewModel mViewModel;
+
+    public static FifthFragment newInstance() {
+        return new FifthFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fourth_fragment, container, false);
+        return inflater.inflate(R.layout.fifth_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(FourthViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(FifthViewModel.class);
         // TODO: Use the ViewModel
     }
 
