@@ -17,6 +17,7 @@ public abstract class NyzfDatabase extends RoomDatabase{
     public static synchronized NyzfDatabase getDatabase(Context context){
         if (INSTANCE == null){
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),NyzfDatabase.class,"nyzf_database")
+                    .fallbackToDestructiveMigration()
                     .build();
         }
         return INSTANCE;

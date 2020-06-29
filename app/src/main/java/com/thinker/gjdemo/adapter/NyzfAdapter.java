@@ -3,12 +3,10 @@ package com.thinker.gjdemo.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.thinker.gjdemo.R;
@@ -29,6 +27,8 @@ public class NyzfAdapter extends RecyclerView.Adapter<NyzfAdapter.MyViewHodler> 
     public MyViewHodler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View itemView = layoutInflater.inflate(R.layout.cell_card,parent,false);
+
+
         return new MyViewHodler(itemView);
     }
 
@@ -69,8 +69,8 @@ public class NyzfAdapter extends RecyclerView.Adapter<NyzfAdapter.MyViewHodler> 
             textView_zuser = itemView.findViewById(R.id.z_user);
             textView_ztime = itemView.findViewById(R.id.z_time);
             textView_zdetail = itemView.findViewById(R.id.z_detail);
-            click_view = itemView.findViewById(R.id.click_detail);
             delete_img = itemView.findViewById(R.id.imageDelete);
+            click_view = itemView.findViewById(R.id.click_detail);
         }
     }
 }

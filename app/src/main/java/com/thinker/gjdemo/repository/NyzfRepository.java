@@ -23,7 +23,7 @@ public class NyzfRepository {
     public void insert(NYZF... nyzfs){
         new InsertAsyncTask(nyzfDao).execute(nyzfs);
     }
-    public void deleteAll(NYZF... nyzfs){
+    public void deleteAll(){
         new DeleteAllAsyncTask(nyzfDao).execute();
     }
     public void delete(NYZF... nyzfs){

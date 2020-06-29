@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nyzf_to_detail"
+    app:startDestination="@id/fourthFragment2">
+
+    <fragment
+        android:id="@+id/fourthFragment2"
+        android:name="com.thinker.gjdemo.fragment.FourthFragment"
+        android:label="fourth_fragment"
+        tools:layout="@layout/fourth_fragment" >
+        <action
+            android:id="@+id/action_fourthFragment2_to_nyzfDetailFragment"
+            app:destination="@id/nyzfDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nyzfDetailFragment"
+        android:name="com.thinker.gjdemo.fragment.NyzfDetailFragment"
+        android:label="fragment_nyzf_detail"
+        tools:layout="@layout/fragment_nyzf_detail" />
+</navigation>

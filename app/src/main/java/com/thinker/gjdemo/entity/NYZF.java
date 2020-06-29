@@ -24,13 +24,25 @@ public class NYZF {
     //执法时间
     @ColumnInfo(name = "zTime")
     public String zTime;
+    //执法照片
+    @ColumnInfo(name = "zImages")
+    public String zImages;
 
-    public NYZF(String zName, String zUser, String zLocation, String zDetail, String zTime) {
+    public String getzImages() {
+        return zImages;
+    }
+
+    public void setzImages(String zImages) {
+        this.zImages = zImages;
+    }
+
+    public NYZF(String zName, String zUser, String zLocation, String zDetail, String zTime, String zImages) {
         this.zName = zName;
         this.zUser = zUser;
         this.zLocation = zLocation;
         this.zDetail = zDetail;
         this.zTime = zTime;
+        this.zImages = zImages;
     }
 
     public String getzUser() {
