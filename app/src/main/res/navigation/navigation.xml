@@ -7,8 +7,17 @@
     <fragment
         android:id="@+id/firstFragment"
         android:name="com.thinker.gjdemo.fragment.FirstFragment"
-        android:label="@string/menu1"
-        tools:layout="@layout/first_fragment" />
+        android:label="@string/daohang1"
+        tools:layout="@layout/first_fragment">
+        <action
+            android:id="@+id/action_firstFragment_to_ckglFragment2"
+            app:destination="@id/ckglFragment2"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_firstFragment_to_kcglFragment2"
+            app:destination="@id/kcglFragment2"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.thinker.gjdemo.fragment.SecondFragment"
@@ -29,4 +38,14 @@
         android:name="com.thinker.gjdemo.fragment.FifthFragment"
         android:label="@string/menu5"
         tools:layout="@layout/fifth_fragment" />
+    <fragment
+        android:id="@+id/ckglFragment2"
+        android:name="com.thinker.gjdemo.fragment.CkglFragment"
+        android:label="@string/ckgl"
+        tools:layout="@layout/fragment_ckgl" />
+    <fragment
+        android:id="@+id/kcglFragment2"
+        android:name="com.thinker.gjdemo.fragment.KcglFragment"
+        android:label="@string/kcgl"
+        tools:layout="@layout/kcgl_fragment" />
 </navigation>
