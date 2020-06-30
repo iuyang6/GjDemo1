@@ -9,10 +9,21 @@
     <string name="z_user">执法人：</string>
     <string name="z_time">创建时间：</string>
     <string name="click_detail">查看详情</string>
-    <string name="daohang1">柑橘生产管理信息系统</string>
+    <string name="daohang1">井研县柑橘生产管理信息系统</string>
     <string name="gisxx">GIS信息</string>
     <string name="gly">管理员</string>
     <string name="title">柑橘安全生产技术体系的创建及推广</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="trpgl">投入品管理</string>
+    <string name="scgl">生产管理</string>
+    <string name="ckgl">仓库管理</string>
+    <string name="clgl">材料管理</string>
+    <string name="rkgl">入库管理</string>
+    <string name="ckgl1">出库管理</string>
+    <string name="kcgl">库存管理</string>
+    <string name="zzgl">种植管理</string>
+    <string name="sfgl">施肥管理</string>
+    <string name="czgl">采摘管理</string>
+    <string name="csdgl">成熟度管理</string>
 </resources>

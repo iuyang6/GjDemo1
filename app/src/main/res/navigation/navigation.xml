@@ -12,7 +12,7 @@
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.thinker.gjdemo.fragment.SecondFragment"
-        android:label="second_fragment"
+        android:label="@string/Menu2"
         tools:layout="@layout/second_fragment" />
     <fragment
         android:id="@+id/thirdFragment"

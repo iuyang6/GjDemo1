@@ -157,6 +157,7 @@ public class FourthFragment extends Fragment {
 
                 }catch (Exception e){
                     e.printStackTrace();
+                }finally {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

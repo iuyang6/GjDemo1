@@ -3,11 +3,18 @@ package com.thinker.gjdemo.fragment;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavAction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -20,8 +27,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class FirstFragment extends Fragment {
 
-    TextView text1,text2;
-    Button button;
+    private NavController navController;
 
     public static FirstFragment newInstance() {
         return new FirstFragment();
@@ -33,19 +39,11 @@ public class FirstFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.first_fragment, container, false);
-        text1 = view.findViewById(R.id.editTextTextPersonName);
-        text2 = view.findViewById(R.id.textView3);
-        button = view.findViewById(R.id.button3);
+        navController = Navigation.findNavController(view.findViewById(R.id.fragment2));
+        NavigationUI.setupActionBarWithNavController((AppCompatActivity) getActivity(),navController);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    String s = text1.getText().toString();
-                    String sMd5 = MD5Utils.md5(s);
-                    text2.setText(sMd5);
-                    System.out.println(sMd5);
-            }
-        });
+
+
         return view;
     }
 
