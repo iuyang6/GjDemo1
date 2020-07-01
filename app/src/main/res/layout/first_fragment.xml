@@ -5,12 +5,14 @@
     android:id="@+id/glfragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".fragment.FirstFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardElevation="0.1dp"
+        android:foreground="?selectableItemBackground"
         app:layout_constraintBottom_toTopOf="@+id/guideline48"
         app:layout_constraintEnd_toStartOf="@+id/guideline32"
         app:layout_constraintStart_toStartOf="@+id/guideline36"
@@ -162,6 +164,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView19"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardElevation="0.1dp"
@@ -312,6 +315,7 @@
             android:layout_gravity="center"
             android:background="@color/cardview_light_background"
             android:src="@drawable/cailiaoguanli" />
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -574,19 +578,14 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.94" />
 
-    <androidx.cardview.widget.CardView
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline27"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline14" >
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:src="@tools:sample/backgrounds/scenic" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="@+id/guideline14"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

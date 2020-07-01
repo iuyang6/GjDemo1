@@ -1,7 +1,6 @@
 package com.thinker.gjdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavAction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;

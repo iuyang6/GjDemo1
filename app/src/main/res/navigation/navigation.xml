@@ -10,13 +10,15 @@
         android:label="@string/daohang1"
         tools:layout="@layout/first_fragment">
         <action
-            android:id="@+id/action_firstFragment_to_ckglFragment2"
-            app:destination="@id/ckglFragment2"
-            app:enterAnim="@anim/nav_default_enter_anim" />
-        <action
             android:id="@+id/action_firstFragment_to_kcglFragment2"
             app:destination="@id/kcglFragment2"
             app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_firstFragment_to_clglFragment"
+            app:destination="@id/clglFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_cangKuFragment"
+            app:destination="@id/cangKuFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -39,13 +41,27 @@
         android:label="@string/menu5"
         tools:layout="@layout/fifth_fragment" />
     <fragment
-        android:id="@+id/ckglFragment2"
-        android:name="com.thinker.gjdemo.fragment.CkglFragment"
-        android:label="@string/ckgl"
-        tools:layout="@layout/fragment_ckgl" />
-    <fragment
         android:id="@+id/kcglFragment2"
         android:name="com.thinker.gjdemo.fragment.KcglFragment"
         android:label="@string/kcgl"
         tools:layout="@layout/kcgl_fragment" />
+    <fragment
+        android:id="@+id/clglFragment"
+        android:name="com.thinker.gjdemo.fragment.ClglFragment"
+        android:label="@string/clgl"
+        tools:layout="@layout/clgl_fragment" >
+        <action
+            android:id="@+id/action_clglFragment_to_caiLiaoTianJiaFragment"
+            app:destination="@id/caiLiaoTianJiaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caiLiaoTianJiaFragment"
+        android:name="com.thinker.gjdemo.fragment.CaiLiaoTianJiaFragment"
+        android:label="@string/xjcl"
+        tools:layout="@layout/cai_liao_tian_jia_fragment" />
+    <fragment
+        android:id="@+id/cangKuFragment"
+        android:name="com.thinker.gjdemo.fragment.CangKuFragment"
+        android:label="@string/ckgl"
+        tools:layout="@layout/cang_ku_fragment" />
 </navigation>
