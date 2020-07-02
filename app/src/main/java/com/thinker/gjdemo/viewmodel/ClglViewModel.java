@@ -22,6 +22,10 @@ public class ClglViewModel extends AndroidViewModel {
     public LiveData<List<CLGL>> getAllClsLive() {
         return clglRepository.getAllClsLive();
     }
+
+    public List<CLGL> getAllClsList() {
+        return clglRepository.getAllList();
+    }
     public LiveData<List<CLGL>> findClsLive(String pattern) {
         return clglRepository.findClsLive(pattern);
     }

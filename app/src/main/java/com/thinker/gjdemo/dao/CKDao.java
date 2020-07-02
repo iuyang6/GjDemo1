@@ -27,6 +27,10 @@ public interface CKDao {
     @Query("SELECT * FROM CK ORDER BY ID DESC")
     LiveData<List<CK>>getAll();
 
+    //查询所有
+    @Query("SELECT * FROM CK ORDER BY ID DESC")
+    List<CK>getAllList();
+
     //条件查询
     @Query("SELECT * FROM ck WHERE ckName LIKE :pattern ORDER BY ID DESC")
     LiveData<List<CK>>find(String pattern);

@@ -32,6 +32,9 @@ public class CkRepository {
     public LiveData<List<CK>> getAll() {
         return allCksLive;
     }
+    public List<CK> getAllCksList() {
+        return ckDao.getAllList();
+    }
 
     public LiveData<List<CK>> find(String pattern) {
         return ckDao.find("%" + pattern + "%");

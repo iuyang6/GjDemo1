@@ -19,6 +19,12 @@
         <action
             android:id="@+id/action_firstFragment_to_cangKuFragment"
             app:destination="@id/cangKuFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_chuKuFragment"
+            app:destination="@id/chuKuFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_ruKuFragment"
+            app:destination="@id/ruKuFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -63,5 +69,34 @@
         android:id="@+id/cangKuFragment"
         android:name="com.thinker.gjdemo.fragment.CangKuFragment"
         android:label="@string/ckgl"
-        tools:layout="@layout/cang_ku_fragment" />
+        tools:layout="@layout/cang_ku_fragment" >
+        <action
+            android:id="@+id/action_cangKuFragment_to_cangKuTianJiaFragment"
+            app:destination="@id/cangKuTianJiaFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/cangKuTianJiaFragment"
+        android:name="com.thinker.gjdemo.fragment.CangKuTianJiaFragment"
+        android:label="@string/xjck"
+        tools:layout="@layout/cang_ku_tian_jia_fragment" />
+    <fragment
+        android:id="@+id/chuKuFragment"
+        android:name="com.thinker.gjdemo.fragment.ChuKuFragment"
+        android:label="chu_ku_fragment"
+        tools:layout="@layout/chu_ku_fragment" />
+    <fragment
+        android:id="@+id/ruKuFragment"
+        android:name="com.thinker.gjdemo.fragment.RuKuFragment"
+        android:label="@string/rkjl"
+        tools:layout="@layout/ru_ku_fragment">
+        <action
+            android:id="@+id/action_ruKuFragment_to_xinJianRuKuFragment3"
+            app:destination="@id/xinJianRuKuFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/xinJianRuKuFragment3"
+        android:name="com.thinker.gjdemo.fragment.XinJianRuKuFragment"
+        android:label="@string/xjrk"
+        tools:layout="@layout/xjru_fragment" />
 </navigation>

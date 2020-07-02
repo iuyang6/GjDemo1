@@ -36,6 +36,9 @@ public class ClglRepository {
 
     public LiveData<List<CLGL>> findClsLive(String pattern) {
         return clglDao.findclsLive("%" + pattern + "%");
+    }  
+    public List<CLGL> getAllList() {
+        return clglDao.getAllList();
     }
 
     //匿名内部类，插入数据

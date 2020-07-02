@@ -102,7 +102,7 @@ public class ClglFragment extends Fragment {
         setHasOptionsMenu(true);
         FragmentActivity activity = requireActivity();
 
-        FloatingActionButton floatingActionButton = activity.findViewById(R.id.ckfloatingActionButton);
+        FloatingActionButton floatingActionButton = activity.findViewById(R.id.clfloatingActionButton);
         //添加材料按钮监听
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +112,7 @@ public class ClglFragment extends Fragment {
             }
         });
         clglViewModel = new ViewModelProvider(activity).get(ClglViewModel.class);
-        recyclerView = activity.findViewById(R.id.ckList);
+        recyclerView = activity.findViewById(R.id.clList);
         clAdapter = new ClAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(clAdapter);

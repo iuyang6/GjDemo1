@@ -27,6 +27,10 @@ public interface CLGLDao {
     @Query("SELECT * FROM CLGL ORDER BY ID DESC")
     LiveData<List<CLGL>>getAllClsLive();
 
+    //查询所有的执法信息
+    @Query("SELECT * FROM CLGL ORDER BY ID DESC")
+    List<CLGL>getAllList();
+
     //条件查询
     @Query("SELECT * FROM CLGL WHERE clmc LIKE :pattern ORDER BY ID DESC")
     LiveData<List<CLGL>>findclsLive(String pattern);

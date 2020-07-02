@@ -3,4 +3,8 @@
     <dimen name="button_width">60dp</dimen>
     <dimen name="button_height">38dp</dimen>
     <dimen name="item_height">60dp</dimen>
+    <dimen name="card_height">90dp</dimen>
+    <dimen name="card_height1">100dp</dimen>
+    <dimen name="connect_height">138dp</dimen>
+    <dimen name="connect_width">250dp</dimen>
 </resources>

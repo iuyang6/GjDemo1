@@ -13,10 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.thinker.gjdemo.R;
 import com.thinker.gjdemo.entity.CLGL;
-import com.thinker.gjdemo.entity.NYZF;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClAdapter extends ListAdapter<CLGL,ClAdapter.MyViewHodler> {
 

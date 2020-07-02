@@ -13,7 +13,6 @@
     <string name="gisxx">GIS信息</string>
     <string name="gly">管理员</string>
     <string name="title">柑橘安全生产技术体系的创建及推广</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="trpgl">投入品管理</string>
     <string name="scgl">生产管理</string>
@@ -34,4 +33,24 @@
     <string name="syzt">使用状态：</string>
     <string name="queren">确认</string>
     <string name="cancel">取消</string>
+    <string name="ms">描述：</string>
+    <string name="fzr">负责人：</string>
+    <string name="bgy">保管员：</string>
+    <string name="edit">修改</string>
+    <string name="commit">上传</string>
+    <string name="ckmc">仓库名称：</string>
+    <string name="ckdz">仓库地址：</string>
+    <string name="ckfzr">仓库负责人：</string>
+    <string name="ckbgy">仓库保管员：</string>
+    <string name="xjck">新建仓库</string>
+    <string name="xzck">选择仓库：</string>
+    <string name="rkjl">入库记录</string>
+    <string name="xjrk">新建入库</string>
+    <string name="xzrkcl">选择入库材料：</string>
+    <string name="rusj">入库时间：</string>
+    <string name="cai_liao_dan_jia">材料单价：</string>
+    <string name="cailiao_zongjia">材料总金额：</string>
+    <string name="cailiao_caigouren">采购人：</string>
+    <string name="cailiao_yanshouren">验收人：</string>
+    <string name="cailiao_baozhiqi">材料保质期：</string>
 </resources>

@@ -28,7 +28,7 @@ import java.security.NoSuchAlgorithmException;
 public class FirstFragment extends Fragment {
 
     private NavController navController;
-    ImageButton imageButtonCKGL,imageButtonKCGL,imageButtonCLGL;
+    ImageButton imageButtonCKGL,imageButtonKCGL,imageButtonCLGL,imageButtonRKGL;
 
     public static FirstFragment newInstance() {
         return new FirstFragment();
@@ -44,6 +44,16 @@ public class FirstFragment extends Fragment {
         imageButtonCKGL = view.findViewById(R.id.imageButton9);
         imageButtonKCGL = view.findViewById(R.id.imageButton5);
         imageButtonCLGL = view.findViewById(R.id.imageButton);
+        imageButtonRKGL = view.findViewById(R.id.imageButton3);
+
+        imageButtonRKGL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_firstFragment_to_ruKuFragment);
+            }
+        });
+
         imageButtonCKGL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
