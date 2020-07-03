@@ -8,7 +8,6 @@ import androidx.lifecycle.LiveData;
 
 import com.thinker.gjdemo.entity.CK;
 import com.thinker.gjdemo.repository.CkRepository;
-import com.thinker.gjdemo.repository.ClglRepository;
 
 import java.util.List;
 

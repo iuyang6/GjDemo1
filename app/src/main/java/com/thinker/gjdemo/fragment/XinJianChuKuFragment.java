@@ -1,17 +1,6 @@
 package com.thinker.gjdemo.fragment;
 
-import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -24,32 +13,30 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 import com.thinker.gjdemo.R;
 import com.thinker.gjdemo.entity.CK;
+import com.thinker.gjdemo.entity.CKJL;
 import com.thinker.gjdemo.entity.CLGL;
-import com.thinker.gjdemo.entity.NYZF;
 import com.thinker.gjdemo.entity.RKJL;
 import com.thinker.gjdemo.viewmodel.CangKuViewModel;
 import com.thinker.gjdemo.viewmodel.ClglViewModel;
-import com.thinker.gjdemo.viewmodel.RuKuViewModel;
+import com.thinker.gjdemo.viewmodel.ChuKuViewModel;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.Arrays;
 import java.util.List;
 
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-public class XinJianRuKuFragment extends Fragment {
+public class XinJianChuKuFragment extends Fragment {
 
     private ClglViewModel clglViewModel;
     private CangKuViewModel cangKuViewModel;
-    private RuKuViewModel ruKuViewModel;
+    private ChuKuViewModel chuKuViewModel;
     private List<CLGL> allCls;
     private List<CK> allCks;
     private FragmentActivity activity;
@@ -57,7 +44,7 @@ public class XinJianRuKuFragment extends Fragment {
     private String ckmc,clmc;
 
     private Button buttonCancel,buttonSubmit;
-    private EditText editTextDJ,editTextZJE,editTextBZQ,editTextRKSJ,editTextCKR,editTextYSR;
+    private EditText editTextCKSJ,editTextChuKuSL,editTextLYR;
 
     private String[] m;
     private String[] m2;
@@ -66,14 +53,14 @@ public class XinJianRuKuFragment extends Fragment {
     private ArrayAdapter<String> adapter2;
 
 
-    public static XinJianRuKuFragment newInstance() {
-        return new XinJianRuKuFragment();
+    public static XinJianChuKuFragment newInstance() {
+        return new XinJianChuKuFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.xjru_fragment, container, false);
+        return inflater.inflate(R.layout.xjcu_fragment, container, false);
     }
 
     @Override
@@ -83,7 +70,7 @@ public class XinJianRuKuFragment extends Fragment {
 
         cangKuViewModel = new ViewModelProvider(activity).get(CangKuViewModel.class);
         clglViewModel = new ViewModelProvider(activity).get(ClglViewModel.class);
-        ruKuViewModel = new ViewModelProvider(activity).get(RuKuViewModel.class);
+        chuKuViewModel = new ViewModelProvider(activity).get(ChuKuViewModel.class);
 
         new Thread(new Runnable() {
             @Override
@@ -103,8 +90,8 @@ public class XinJianRuKuFragment extends Fragment {
                             m2[i] = allCls.get(i).getClmc();
                         }
                     }
-                    spinner = activity.findViewById(R.id.spinner);
-                    spinner2 = activity.findViewById(R.id.spinner2);
+                    spinner = activity.findViewById(R.id.spinner3);
+                    spinner2 = activity.findViewById(R.id.spinner4);
                     adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item, m);
                     adapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item, m2);
                     //设置下拉列表的风格
@@ -133,14 +120,11 @@ public class XinJianRuKuFragment extends Fragment {
         }).start();
 
 
-        editTextDJ = activity.findViewById(R.id.editTextNumber2);
-        editTextZJE = activity.findViewById(R.id.editTextNumber3);
-        editTextBZQ = activity.findViewById(R.id.editTextNumber4);
-        editTextRKSJ = activity.findViewById(R.id.editTextDate);
-        editTextCKR = activity.findViewById(R.id.editTextTextPersonName6);
-        editTextYSR = activity.findViewById(R.id.editTextTextPersonName5);
-        buttonSubmit = activity.findViewById(R.id.button7);
-        buttonCancel = activity.findViewById(R.id.button8);
+        editTextCKSJ = activity.findViewById(R.id.editTextTextPersonName7);
+        editTextChuKuSL = activity.findViewById(R.id.editTextTextPersonName8);
+        editTextLYR = activity.findViewById(R.id.editTextTextPersonName9);
+        buttonSubmit = activity.findViewById(R.id.button10);
+        buttonCancel = activity.findViewById(R.id.button9);
 
         //初次进入，确认按钮设置为不可用状态
         buttonSubmit.setEnabled(false);
@@ -154,46 +138,34 @@ public class XinJianRuKuFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String cldj = editTextDJ.getText().toString().trim();
-                String clzje = editTextZJE.getText().toString().trim();
-                String clbzq = editTextBZQ.getText().toString().trim();
-                String clrusj = editTextRKSJ.getText().toString().trim();
-                String cgr = editTextCKR.getText().toString().trim();
-                String ysr = editTextYSR.getText().toString().trim();
+                String cksj = editTextCKSJ.getText().toString().trim();
+                String cksl = editTextChuKuSL.getText().toString().trim();
+                String lyr = editTextLYR.getText().toString().trim();
                 //都不为空时，确认按钮有效
-                buttonSubmit.setEnabled(!cldj.isEmpty() && !clzje.isEmpty() && !clbzq.isEmpty() && !clrusj.isEmpty() && !cgr.isEmpty() && !ysr.isEmpty());
+                buttonSubmit.setEnabled(!cksj.isEmpty() && !cksl.isEmpty() && !lyr.isEmpty());
             }
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         };
         //每一个输入栏添加监听
-        editTextDJ.addTextChangedListener(textWatcher);
-        editTextZJE.addTextChangedListener(textWatcher);
-        editTextBZQ.addTextChangedListener(textWatcher);
-        editTextRKSJ.addTextChangedListener(textWatcher);
-        editTextCKR.addTextChangedListener(textWatcher);
-        editTextYSR.addTextChangedListener(textWatcher);
+        editTextCKSJ.addTextChangedListener(textWatcher);
+        editTextChuKuSL.addTextChangedListener(textWatcher);
+        editTextLYR.addTextChangedListener(textWatcher);
         //为确认按钮添加事件
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            String cldj = editTextDJ.getText().toString().trim() + "元";
-            String clzje = editTextZJE.getText().toString().trim() + "元";
-            String clbzq = editTextBZQ.getText().toString().trim() + "天";
-            String clrusj = editTextRKSJ.getText().toString().trim();
-            String cgr = editTextCKR.getText().toString().trim();
-            String ysr = editTextYSR.getText().toString().trim();
-            System.out.println(ckmc+clmc+clrusj+cldj+clzje+clbzq+cgr+ysr);
-            RKJL rkjl = new RKJL(ckmc,clmc,clrusj,cldj,clzje,clbzq,cgr,ysr);
-//            CK ck = new CK(ckmc,ckdz,ms,fzr,bgy);
-            //呼叫入库记录repository的添加方法
-            ruKuViewModel.insert(rkjl);
-//            cangKuViewModel.insert(ck);
-            //呼叫返回
-            NavController navController = Navigation.findNavController(v);
-            navController.navigateUp();
+                String cksj = editTextCKSJ.getText().toString().trim();
+                String cksl = editTextChuKuSL.getText().toString().trim();
+                String lyr = editTextLYR.getText().toString().trim();
+                CKJL ckjl = new CKJL(ckmc,clmc,cksj,cksl,lyr);
+                //呼叫出库记录repository的添加方法
+                chuKuViewModel.insert(ckjl);
+        //            cangKuViewModel.insert(ck);
+                //呼叫返回
+                NavController navController = Navigation.findNavController(v);
+                navController.navigateUp();
             }
         });
 

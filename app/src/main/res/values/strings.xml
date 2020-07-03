@@ -53,4 +53,12 @@
     <string name="cailiao_caigouren">采购人：</string>
     <string name="cailiao_yanshouren">验收人：</string>
     <string name="cailiao_baozhiqi">材料保质期：</string>
+    <string name="cl">材料：</string>
+    <string name="dj">单价：</string>
+    <string name="xzckcl">选择出库材料：</string>
+    <string name="xinjianchuku">新建出库</string>
+    <string name="zzdgl">种植管理</string>
+    <string name="xinjianzzd">新建种植地</string>
+    <string name="sfjl">施肥记录</string>
+    <string name="xjsf">新建施肥</string>
 </resources>

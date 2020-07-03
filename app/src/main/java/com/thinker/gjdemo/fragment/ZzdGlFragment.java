@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -33,34 +34,32 @@ import android.widget.SearchView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.thinker.gjdemo.R;
-import com.thinker.gjdemo.adapter.CkjlAdapter;
-import com.thinker.gjdemo.entity.CKJL;
-import com.thinker.gjdemo.viewmodel.ChuKuViewModel;
-import com.thinker.gjdemo.viewmodel.ChuKuViewModel;
+import com.thinker.gjdemo.adapter.ZzdAdapter;
+import com.thinker.gjdemo.entity.ZZD;
+import com.thinker.gjdemo.viewmodel.ZzdGlViewModel;
+import com.thinker.gjdemo.viewmodel.ZzdGlViewModel;
 
 import java.util.List;
 
-public class ChuKuFragment extends Fragment {
+public class ZzdGlFragment extends Fragment {
 
-
-    private ChuKuViewModel chuKuViewModel;
+    private ZzdGlViewModel zzdGlViewModel;
     private RecyclerView recyclerView;
 
-    private List<CKJL> allCks;
+    private List<ZZD> allZzds;
     private boolean undoAction;
-    private CkjlAdapter ckjlAdapter;
+    private ZzdAdapter zzdAdapter;
     //过滤后的数据
-    private LiveData<List<CKJL>> filteredCks;
+    private LiveData<List<ZZD>> filteredZzds;
 
-
-    public static RuKuFragment newInstance() {
-        return new RuKuFragment();
+    public static ZzdGlFragment newInstance() {
+        return new ZzdGlFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.chu_ku_fragment, container, false);
+        return inflater.inflate(R.layout.zzd_gl_fragment, container, false);
     }
 
     @Override
@@ -83,15 +82,15 @@ public class ChuKuFragment extends Fragment {
             public boolean onQueryTextChange(String newText) {
                 String pattern = newText.trim();
                 //在搜索之前移除观察
-                filteredCks.removeObservers(getViewLifecycleOwner());
-                filteredCks = chuKuViewModel.find(pattern);
-                filteredCks.observe(getViewLifecycleOwner(), new Observer<List<CKJL>>() {
+                filteredZzds.removeObservers(getViewLifecycleOwner());
+                filteredZzds = zzdGlViewModel.find(pattern);
+                filteredZzds.observe(getViewLifecycleOwner(), new Observer<List<ZZD>>() {
                     @Override
-                    public void onChanged(List<CKJL> ckjls) {
-                        allCks = ckjls;
-                        int temp = ckjlAdapter.getItemCount();
-                        if(temp != ckjls.size()){
-                            ckjlAdapter.submitList(ckjls);
+                    public void onChanged(List<ZZD> zzds) {
+                        allZzds = zzds;
+                        int temp = zzdAdapter.getItemCount();
+                        if(temp != zzds.size()){
+                            zzdAdapter.submitList(zzds);
                         }
                     }
                 });
@@ -106,35 +105,35 @@ public class ChuKuFragment extends Fragment {
         FragmentActivity activity = requireActivity();
         //显示搜索按钮
         setHasOptionsMenu(true);
-        FloatingActionButton floatingActionButton = activity.findViewById(R.id.floatingActionButton);
+        FloatingActionButton floatingActionButton = activity.findViewById(R.id.tianjia_zzd);
         //添加入库记录按钮监听
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavController navController = Navigation.findNavController(v);
-                navController.navigate(R.id.action_chuKuFragment_to_xinJianChuKuFragment2);
+                navController.navigate(R.id.action_zzdGlFragment_to_zzdAddFragment);
             }
         });
 
-        chuKuViewModel = new ViewModelProvider(activity).get(ChuKuViewModel.class);
-        recyclerView = activity.findViewById(R.id.chukuList);
-        ckjlAdapter = new CkjlAdapter();
+        zzdGlViewModel = new ViewModelProvider(activity).get(ZzdGlViewModel.class);
+        recyclerView = activity.findViewById(R.id.zzdList);
+        zzdAdapter = new ZzdAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(ckjlAdapter);
+        recyclerView.setAdapter(zzdAdapter);
         //一开始将全部赋值给过滤后的数据
-        filteredCks = chuKuViewModel.getAll();
+        filteredZzds = zzdGlViewModel.getAll();
         //监听材料的变化，页面刷新
-        filteredCks.observe(getViewLifecycleOwner(), new Observer<List<CKJL>>() {
+        filteredZzds.observe(getViewLifecycleOwner(), new Observer<List<ZZD>>() {
             @Override
-            public void onChanged(List<CKJL> ckjls) {
-                allCks = ckjls;
-                int temp = ckjlAdapter.getItemCount();
-                if(temp != ckjls.size()){
-                    if (temp < ckjls.size() && !undoAction) {
+            public void onChanged(List<ZZD> zzds) {
+                allZzds = zzds;
+                int temp = zzdAdapter.getItemCount();
+                if(temp != zzds.size()){
+                    if (temp < zzds.size() && !undoAction) {
                         recyclerView.smoothScrollBy(0,-200);
                     }
                     undoAction = false;
-                    ckjlAdapter.submitList(ckjls);
+                    zzdAdapter.submitList(zzds);
                 }
 
             }
@@ -148,16 +147,16 @@ public class ChuKuFragment extends Fragment {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                final CKJL ckjlToDelete = allCks.get(viewHolder.getAdapterPosition());
-                chuKuViewModel.delete(ckjlToDelete);
+                final ZZD rkjlToDelete = allZzds.get(viewHolder.getAdapterPosition());
+                zzdGlViewModel.delete(rkjlToDelete);
 
                 //撤销删除
-                Snackbar.make(requireActivity().findViewById(R.id.chuku_fragment),"删除了一条出库记录",Snackbar.LENGTH_SHORT)
+                Snackbar.make(requireActivity().findViewById(R.id.zzdGlfragment),"删除了一条入库记录",Snackbar.LENGTH_SHORT)
                         .setAction("撤销", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 undoAction = true;
-                                chuKuViewModel.insert(ckjlToDelete);
+                                zzdGlViewModel.insert(rkjlToDelete);
                             }
                         })
                         .show();
@@ -209,5 +208,6 @@ public class ChuKuFragment extends Fragment {
         imm.hideSoftInputFromWindow(getView().getWindowToken(),0);
         super.onResume();
     }
+
 
 }

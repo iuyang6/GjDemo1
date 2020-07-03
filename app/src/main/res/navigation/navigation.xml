@@ -25,6 +25,12 @@
         <action
             android:id="@+id/action_firstFragment_to_ruKuFragment"
             app:destination="@id/ruKuFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_zzdGlFragment2"
+            app:destination="@id/zzdGlFragment" />
+        <action
+            android:id="@+id/action_firstFragment_to_sfjlFragment"
+            app:destination="@id/sfjlFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -83,8 +89,12 @@
     <fragment
         android:id="@+id/chuKuFragment"
         android:name="com.thinker.gjdemo.fragment.ChuKuFragment"
-        android:label="chu_ku_fragment"
-        tools:layout="@layout/chu_ku_fragment" />
+        android:label="@string/ckgl1"
+        tools:layout="@layout/chu_ku_fragment" >
+        <action
+            android:id="@+id/action_chuKuFragment_to_xinJianChuKuFragment2"
+            app:destination="@id/xinJianChuKuFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/ruKuFragment"
         android:name="com.thinker.gjdemo.fragment.RuKuFragment"
@@ -99,4 +109,37 @@
         android:name="com.thinker.gjdemo.fragment.XinJianRuKuFragment"
         android:label="@string/xjrk"
         tools:layout="@layout/xjru_fragment" />
+    <fragment
+        android:id="@+id/xinJianChuKuFragment2"
+        android:name="com.thinker.gjdemo.fragment.XinJianChuKuFragment"
+        android:label="@string/xinjianchuku"
+        tools:layout="@layout/xjcu_fragment" />
+    <fragment
+        android:id="@+id/zzdGlFragment"
+        android:name="com.thinker.gjdemo.fragment.ZzdGlFragment"
+        android:label="@string/zzdgl"
+        tools:layout="@layout/zzd_gl_fragment">
+        <action
+            android:id="@+id/action_zzdGlFragment_to_zzdAddFragment"
+            app:destination="@id/zzdAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/zzdAddFragment"
+        android:name="com.thinker.gjdemo.fragment.ZzdAddFragment"
+        android:label="@string/xinjianzzd"
+        tools:layout="@layout/zzd_add_fragment" />
+    <fragment
+        android:id="@+id/sfjlFragment"
+        android:name="com.thinker.gjdemo.fragment.SfjlFragment"
+        android:label="@string/sfjl"
+        tools:layout="@layout/sfjl_fragment">
+        <action
+            android:id="@+id/action_sfjlFragment_to_SAddFragment"
+            app:destination="@id/SAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SAddFragment"
+        android:name="com.thinker.gjdemo.fragment.SAddFragment"
+        android:label="@string/xjsf"
+        tools:layout="@layout/s_add_fragment" />
 </navigation>

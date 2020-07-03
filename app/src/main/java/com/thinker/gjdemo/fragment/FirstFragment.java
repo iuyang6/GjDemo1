@@ -28,7 +28,7 @@ import java.security.NoSuchAlgorithmException;
 public class FirstFragment extends Fragment {
 
     private NavController navController;
-    ImageButton imageButtonCKGL,imageButtonKCGL,imageButtonCLGL,imageButtonRKGL;
+    ImageButton imageButtonCKGL,imageButtonKCGL,imageButtonCLGL,imageButtonRKGL,imageButtonCKJL,imageButtonZZD,imageButtonSFGL;
 
     public static FirstFragment newInstance() {
         return new FirstFragment();
@@ -45,6 +45,9 @@ public class FirstFragment extends Fragment {
         imageButtonKCGL = view.findViewById(R.id.imageButton5);
         imageButtonCLGL = view.findViewById(R.id.imageButton);
         imageButtonRKGL = view.findViewById(R.id.imageButton3);
+        imageButtonCKJL = view.findViewById(R.id.imageButton4);
+        imageButtonZZD = view.findViewById(R.id.imageButton6);
+        imageButtonSFGL = view.findViewById(R.id.imageButton7);
 
         imageButtonRKGL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +78,27 @@ public class FirstFragment extends Fragment {
             public void onClick(View v) {
                 NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.action_firstFragment_to_clglFragment);
+            }
+        });
+        imageButtonCKJL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_firstFragment_to_chuKuFragment);
+            }
+        });
+        imageButtonZZD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_firstFragment_to_zzdGlFragment2);
+            }
+        });
+        imageButtonSFGL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_firstFragment_to_sfjlFragment);
             }
         });
 
